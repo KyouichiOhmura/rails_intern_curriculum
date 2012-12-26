@@ -1,6 +1,7 @@
 <h1>Listing test_boards</h1>
 
 <table>
+
 <% @test_boards.each do |test_board| %>
 <% if false %>
   <tr>
@@ -9,28 +10,25 @@
   </tr>
 <% end %>
 
-
   <tr>
     <td>User_ID</td>
     <td><%= test_board.user_id %></td>
   </tr>
 
-
-
   <tr>
     <td>UserName</td>
     <td>
-	<% @user = User.find_by_user_id(test_board.user_id) %>
-	<% if @user then %>
-	<%= link_to @user.name, user_path(@user) %>
-	<% else %>
-	Not Found User
-	 <% if test_board.user_id then%>
-	  <%= link_to 'create user', newuser_path(:id=> test_board.user_id) %>
-	 <% else %>
-	  <%= link_to 'create user', new_user_path %>
-	 <% end %>
-	<% end %>
+	 	<% @user = User.find_by_user_id(test_board.user_id) %>
+		<% if @user then %>
+			<%= link_to @user.name, user_path(@user) %>
+		<% else %>
+			Not Found User
+			<% if test_board.user_id then%>
+				<%= link_to 'create user', newuser_path(:id=> test_board.user_id) %>
+			<% else %>
+				<%= link_to 'create user', new_user_path %>
+			<% end %>
+		<% end %>
     </td>
   </tr>
 
