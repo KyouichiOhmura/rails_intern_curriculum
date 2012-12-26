@@ -3,12 +3,12 @@
 <table>
 
 <% @test_boards.each do |test_board| %>
-<% if false %>
-  <tr>
-    <td>ID</td>
-    <td><%= test_board.id %></td>
-  </tr>
-<% end %>
+	<% if false %>
+ 	 <tr>
+  	  <td>ID</td>
+  	  <td><%= test_board.id %></td>
+ 	 </tr>
+	<% end %>
 
   <tr>
     <td>User_ID</td>
@@ -32,15 +32,16 @@
     </td>
   </tr>
 
-
   <tr>
     <td>Title</td>
     <td><%= test_board.title %></td>
   </tr>
+
   <tr>
     <td>Comment</td>
     <td><%= test_board.comment %></td>
   </tr>
+  
   <tr>
     <td>D time</td>
     <td><%= test_board.d_time %></td>
