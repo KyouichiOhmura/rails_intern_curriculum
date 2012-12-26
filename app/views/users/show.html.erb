@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @user.user_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<%=link_to 'TestBoard', test_boards_path %>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Users', users_path %>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @test_board.id %>
+</p>
+
+<p>
+  <b>User_id:</b>
+  <%= @test_board.user_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @test_board.title %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @test_board.comment %>
+</p>
+
+<p>
+  <b>D time:</b>
+  <%= @test_board.d_time %>
+</p>
+
+
+<%= link_to 'Edit', edit_test_board_path(@test_board) %> |
+<%= link_to 'Back', test_boards_path %>
