@@ -2,21 +2,12 @@ require 'date'
 Board::Application.routes.draw do
   
 
-  resources :test_data
-
-
   match 'users/newuser/:id', :to=>'users#newnum' ,:as=>'newuser' ,:via=>:get
 
   resources :users
 
 
-  resources :view_tests
-
-
   resources :test_boards
-
-
-  resources :as
 
 
   # The priority is based upon order of creation:
