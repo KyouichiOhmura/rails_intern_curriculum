@@ -1,38 +1,44 @@
 <%= form_for(@test_board) do |f| %>
-  <% if @test_board.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@test_board.errors.count, "error") %> prohibited this test_board from being saved:</h2>
-
-      <ul>
-      <% @test_board.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-<% if false %>
-  <div class="field">
-    <%= f.label :id %><br />
-    <%= f.number_field :id %>
-  </div>
-<% end %>
-  <div class="field">
-    <%= f.label :userid %><br />
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title, :size=>20 %>
-  </div>
-  <div class="field">
-    <%= f.label :comment %><br />
-    <%= f.text_area :comment ,:size=>40 %>
-  </div>
-  <div class="field">
-    <%= f.label :d_time %><br />
-    <%= f.time_select :d_time %>
-  </div>
-  <div class="actions">
-     <%= f.submit %>
-  </div>
+	<% if @test_board.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@test_board.errors.count, "error") %> prohibited this test_board from being saved:</h2>
+			
+			<ul>
+				<% @test_board.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	
+	<% if false %>
+		<div class="field">
+			<%= f.label :id %><br />
+			<%= f.number_field :id %>
+		</div>
+	<% end %>
+	
+	<div class="field">
+		<%= f.label :userid %><br />
+		<%= f.number_field :user_id %>
+	</div>
+	
+	<div class="field">
+		<%= f.label :title %><br />
+		<%= f.text_field :title, :size=>20 %>
+	</div>
+	
+	<div class="field">
+		<%= f.label :comment %><br />
+		<%= f.text_area :comment ,:size=>40 %>
+	</div>
+	
+	<div class="field">
+		<%= f.label :d_time %><br />
+		<%= f.time_select :d_time %>
+	</div>
+	
+	<div class="actions">
+		<%= f.submit %>
+	</div>
 <% end %>

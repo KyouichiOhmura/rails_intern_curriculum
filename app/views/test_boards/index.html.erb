@@ -1,55 +1,56 @@
 <h1>Listing test_boards</h1>
 
-<table>
-
-<% @test_boards.each do |test_board| %>
-<% if false %>
-  <tr>
-    <td>ID</td>
-    <td><%= test_board.id %></td>
-  </tr>
-<% end %>
-
-  <tr>
-    <td>User_ID</td>
-    <td><%= test_board.user_id %></td>
-  </tr>
-
-  <tr>
-    <td>UserName</td>
-    <td>
-	 	<% @user = User.find_by_user_id(test_board.user_id) %>
-		<% if @user then %>
-			<%= link_to @user.name, user_path(@user) %>
-		<% else %>
-			Not Found User
-			<% if test_board.user_id then%>
-				<%= link_to 'create user', newuser_path(:id=> test_board.user_id) %>
+<table><% @test_boards.each do |test_board| %>
+	
+	<% if false %>
+		<tr>
+			<td>ID</td>
+			<td><%= test_board.id %></td>
+		</tr>
+	<% end %>
+	
+	<tr>
+		<td>User_ID</td>
+		<td><%= test_board.user_id %></td>
+	</tr>
+	
+	<tr>
+		<td>UserName</td>
+		<td>
+			<% @user = User.find_by_user_id(test_board.user_id) %>
+			<% if @user then %>
+				<%= link_to @user.name, user_path(@user) %>
 			<% else %>
-				<%= link_to 'create user', new_user_path %>
+				Not Found User
+				<% if test_board.user_id then%>
+					<%= link_to 'create user', newuser_path(:id=> test_board.user_id) %>
+				<% else %>
+					<%= link_to 'create user', new_user_path %>
+				<% end %>
 			<% end %>
-		<% end %>
-    </td>
-  </tr>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>Title</td>
+		<td><%= test_board.title %></td>
+	</tr>
 
-
-  <tr>
-    <td>Title</td>
-    <td><%= test_board.title %></td>
-  </tr>
-  <tr>
-    <td>Comment</td>
-    <td><%= test_board.comment %></td>
-  </tr>
-  <tr>
-    <td>D time</td>
-    <td><%= test_board.d_time %></td>
-  </tr>
-  <tr>
-    <td><%= link_to 'Show', test_board %>  <%= link_to 'Edit', edit_test_board_path(test_board) %> <%= link_to 'Destroy', test_board, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+	<tr>
+		<td>Comment</td>
+		<td><%= test_board.comment %></td>
+	</tr>
+	
+	<tr>
+		<td>D time</td>
+		<td><%= test_board.d_time %></td>
+	</tr>
+	
+	<tr>
+		<td><%= link_to 'Show', test_board %>  <%= link_to 'Edit', edit_test_board_path(test_board) %> <%= link_to 'Destroy', test_board, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	</tr>
+	
+<% end %></table>
 
 <br />
 
