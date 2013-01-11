@@ -30,5 +30,16 @@ describe User do
 		users(:test4).name.should_not== nil
 		users(:test4).user_id.should==4
 	end
+
+	it "nil test" do
+		for i in @users
+			i.name.should_not==nil
+			i.user_id.should_not==nil
+		end
+	end
+
+
+
+
 	#pending "add some examples to (or delete) #{__FILE__}"
 end
