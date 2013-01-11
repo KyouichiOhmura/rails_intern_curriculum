@@ -8,7 +8,19 @@ describe TestBoard do
 	end
 
 	it "fixture's data size test" do
-		@boards.size.should == 3
+		@boards.size.should == 4
+	end
+	
+	it "No1 test" do
+		test_boards(:no1).comment.should == "No1"
+	end
+	
+	pending it "No4 test" do
+		test_boards(:no4).user_id.should_not == nil
+	end
+
+	it "nill test" do
+		@boards.count(nil).should ==0
 	end
 
 end
@@ -27,7 +39,7 @@ end
 #	end
 #
 #	it "test1 data test" do
-#		users(:test1).name.should == "test1"
+#users(:test1).name.should == "test1"
 #		users(:test1).user_id.should == 1
 #	end
 #	

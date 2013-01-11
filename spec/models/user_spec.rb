@@ -8,7 +8,7 @@ describe User do
 	end
 	
 	it "fixture's data size test" do
-		@users.size.should ==3
+		@users.size.should ==4
 	end
 
 	it "test1 data test" do
@@ -24,6 +24,11 @@ describe User do
 	it "test3 data test" do
 		users(:test3).name.should == "test3"
 		users(:test3).user_id.should == 3
+	end
+
+	pending it "test4 data test :nill test" do
+		users(:test4).name.should_not== nil
+		users(:test4).user_id.should==4
 	end
 	#pending "add some examples to (or delete) #{__FILE__}"
 end
