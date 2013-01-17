@@ -16,7 +16,7 @@ describe TestBoard do
 	end
 	
 	pending it "No4 test" do
-		test_boards(:no4).user_id.should_not == nil
+		expect {test_boards(:no4).save}.to raise_error ActiveRecord::RecordInvalid 
 	end
 
 	it "nill test" do

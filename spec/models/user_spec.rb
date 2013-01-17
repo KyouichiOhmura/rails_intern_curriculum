@@ -26,17 +26,10 @@ describe User do
 		users(:test3).user_id.should == 3
 	end
 
-	pending it "test4 data test :nill test" do
-		users(:test4).name.should_not== nil
-		users(:test4).user_id.should==4
+	it "nill save" do
+		expect { users(:test4).save! }.to raise_error ActiveRecord::RecordInvalid
 	end
 
-	it "nil test" do
-		for i in @users
-			i.name.should_not==nil
-			i.user_id.should_not==nil
-		end
-	end
 
 
 

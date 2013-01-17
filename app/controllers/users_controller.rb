@@ -58,7 +58,7 @@ class UsersController < ApplicationController
 			@user.user_id=1
 		end 
 		(@user.user_id+=1)while(User.find_by_user_id(@user.user_id))
-		##
+		#
 
 		respond_to do |format|
 			if @user.save

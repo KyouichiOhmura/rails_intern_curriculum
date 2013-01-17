@@ -159,6 +159,10 @@ githubに公開
 
 
 2013/1/11
-read http://d.hatena.ne.jp/language_and_engineering/20091023/p1
+read 
+http://d.hatena.ne.jp/language_and_engineering/20091023/p1
 http://d.hatena.ne.jp/moro/20061029/1162116778
 http://doc.ruby-lang.org/ja/1.9.2/library/test=2funit.html
+
+
+user:user_idは属性をuniqueにすればいいんじゃないか
