@@ -24,7 +24,7 @@ describe TestBoardsController do
   # TestBoard. As you add validations to TestBoard, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "id" => "1" }
+    { "id" => "1", "comment"=>"test_comment", "title"=>"test_title", "user_id"=>"1" }
   end
 
   # This should return the minimal set of values that should be in the session

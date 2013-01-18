@@ -24,7 +24,10 @@ describe UsersController do
   # User. As you add validations to User, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "name" => "MyString" }
+    {
+	 "name"=>"controller test",
+	 "user_id"=>"1000"
+	 }
   end
 
   # This should return the minimal set of values that should be in the session
@@ -53,6 +56,13 @@ describe UsersController do
   describe "GET new" do
     it "assigns a new user as @user" do
       get :new, {}, valid_session
+      assigns(:user).should be_a_new(User)
+    end
+  end
+
+  describe "GET newnum" do
+    it "assigns a new number user as @user" do
+      get :newnum, {:id => 1}, valid_session
       assigns(:user).should be_a_new(User)
     end
   end
