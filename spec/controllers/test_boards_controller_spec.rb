@@ -31,7 +31,7 @@ describe TestBoardsController do
   # in order to pass any filters (e.g. authentication) defined in
   # TestBoardsController. Be sure to keep this updated too.
   def valid_session
-    {}
+    {"id" => "1", "comment"=>"test_comment", "title"=>"test_title", "user_id"=>"1" }
   end
 
   describe "GET index" do

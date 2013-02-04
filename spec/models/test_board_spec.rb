@@ -15,7 +15,7 @@ describe TestBoard do
 		test_boards(:no1).comment.should == "No1"
 	end
 	
-	pending it "No4 test" do
+   it "No4 test" do
 		expect {test_boards(:no4).save}.to raise_error ActiveRecord::RecordInvalid 
 	end
 
