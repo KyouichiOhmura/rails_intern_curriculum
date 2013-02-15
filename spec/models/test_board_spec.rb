@@ -15,8 +15,10 @@ describe TestBoard do
 		test_boards(:no1).comment.should == "No1"
 	end
 	
-   it "No4 test" do
-		expect {test_boards(:no4).save}.to raise_error ActiveRecord::RecordInvalid 
+   it "No4.save should raise error" do
+      test_boards(:no4).user_id.should == nil
+      test_boards(:no4).title.should_not ==nil
+      expect {test_boards(:no4).save! }.to (raise_error )#(ActiveRecord::RecordInvalid))
 	end
 
 	it "nill test" do

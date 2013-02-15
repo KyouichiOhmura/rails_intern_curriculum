@@ -81,7 +81,12 @@ describe TestBoardsController do
 
       it "redirects to the created test_board" do
         post :create, {:test_board => valid_attributes}, valid_session
-        response.should redirect_to(TestBoard.last)
+        user= User.find_by_user_id(1)
+        if(user.nil? )
+          response.should redirect_to  ("/users/newuser/1")
+        else
+          response.should redirect_to  user
+        end
       end
     end
 
@@ -123,7 +128,7 @@ describe TestBoardsController do
       it "redirects to the test_board" do
         test_board = TestBoard.create! valid_attributes
         put :update, {:id => test_board.to_param, :test_board => valid_attributes}, valid_session
-        response.should redirect_to(test_board)
+        response.should redirect_to( :controller => 'test_boards' )
       end
     end
 

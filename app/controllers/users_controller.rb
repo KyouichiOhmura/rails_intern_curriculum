@@ -54,10 +54,10 @@ class UsersController < ApplicationController
 		
 		#ここは修正する必要あり
 		#findの内部の動きを調べる
-		if @user.user_id.nil?
-			@user.user_id=1
-		end 
-		(@user.user_id+=1)while(User.find_by_user_id(@user.user_id))
+		#if @user.user_id.nil?
+		#	@user.user_id=1
+		#end 
+		#(@user.user_id+=1)while(User.find_by_user_id(@user.user_id))
 		#
 
 		respond_to do |format|
