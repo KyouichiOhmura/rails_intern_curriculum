@@ -37,30 +37,26 @@ class TestBoardsController < ApplicationController
 		@test_board = TestBoard.find(params[:id])
 	end
 	
-	# POST /test_boards
-	# POST /test_boards.json
-	def create
-		@test_board = TestBoard.new(params[:test_board])
-		respond_to do |format|
-			if @test_board.save
-				@user = User.find_by_user_id(@test_board.user_id)
-				if @user 
-					format.html { redirect_to @user }
-					format.json { render json: @test_board, status: :created, location: @test_board }
-				else
-					if @test_board.user_id
-						format.html { redirect_to :controller => 'users', :action => 'newnum', :id => @test_board.user_id }
-					else
-						format.html { redirect_to :controller => 'users', :action => 'new' }
-					end
-					format.json { render json: @test_board, status: :created, location: @test_board }
-				end
-			else
-				format.html { render action: "new" }
-				format.json { render json: @test_board.errors, status: :unprocessable_entity }
-			end
-		end
-	end
+  # POST /test_boards
+  # POST /test_boards.json
+  def create
+    @test_board = TestBoard.new(params[:test_board])
+    respond_to do |format|
+      if @test_board.save
+        @user = User.find_by_user_id(@test_board.user_id)
+        if @user 
+          format.html { redirect_to @user }
+          format.json { render json: @test_board, status: :created, location: @test_board }
+        else
+          format.html { redirect_to :controller => 'users', :action => 'new', :id => @test_board.user_id }
+          format.json { render json: @test_board, status: :created, location: @test_board }
+        end
+      else
+      format.html { render action: "new" } 
+      format.json { render json: @test_board.errors, status: :unprocessable_entity }
+    end
+  end
+end
 	
 	# PUT /test_boards/1
 	# PUT /test_boards/1.json

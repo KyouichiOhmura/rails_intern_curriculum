@@ -83,7 +83,7 @@ describe TestBoardsController do
         post :create, {:test_board => valid_attributes}, valid_session
         user= User.find_by_user_id(1)
         if(user.nil? )
-          response.should redirect_to  ("/users/newuser/1")
+          response.should redirect_to  ("/users/new/1")
         else
           response.should redirect_to  user
         end

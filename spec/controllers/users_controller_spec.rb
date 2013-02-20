@@ -60,12 +60,6 @@ describe UsersController do
     end
   end
 
-  describe "GET newnum" do
-    it "assigns a new number user as @user" do
-      get :newnum, {:id => 1}, valid_session
-      assigns(:user).should be_a_new(User)
-    end
-  end
 
   describe "GET edit" do
     it "assigns the requested user as @user" do
