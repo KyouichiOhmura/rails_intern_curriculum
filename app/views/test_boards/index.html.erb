@@ -23,7 +23,7 @@
 			<% else %>
 				Not Found User
 				<% if test_board.user_id then%>
-					<%= link_to 'create user', newuser_path(:id=> test_board.user_id) %>
+					<%= link_to 'create user', new_user_path(:id=> test_board.user_id) %>
 				<% else %>
 					<%= link_to 'create user', new_user_path %>
 				<% end %>
