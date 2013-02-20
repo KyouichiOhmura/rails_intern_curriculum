@@ -1,30 +1,29 @@
-require 'spec_helper'
+rquire 'spec_helper'
 
 describe TestBoard do
-	fixtures :test_boards
+  fixtures :test_boards
 
-	before "fixtures test" do
-		@boards=TestBoard.find(:all)
-	end
+  before "fixtures test" do
+    @boards=TestBoard.find(:all)
+  end
 
-	it "fixture's data size test" do
-		@boards.size.should == 4
-	end
+  it "fixture's data size test" do
+    @boards.size.should == 4
+  end
 	
-	it "No1 test" do
-		test_boards(:no1).comment.should == "No1"
-	end
+  it "No1 test" do
+    test_boards(:no1).comment.should == "No1"
+  end
 	
-   it "No4.save should raise error" do
-      test_boards(:no4).user_id.should == nil
-      test_boards(:no4).title.should_not ==nil
-      expect {test_boards(:no4).save! }.to (raise_error )#(ActiveRecord::RecordInvalid))
-	end
+  it "No4.save should raise error" do
+    test_boards(:no4).user_id.should == nil
+    test_boards(:no4).title.should_not ==nil
+    expect {test_boards(:no4).save! }.to (raise_error )#(ActiveRecord::RecordInvalid))
+  end
 
-	it "nill test" do
-		@boards.count(nil).should ==0
-	end
-
+  it "nill test" do
+    @boards.count(nil).should ==0
+  end
 end
 
 
