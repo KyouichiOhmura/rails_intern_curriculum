@@ -20,28 +20,17 @@ class UsersController < ApplicationController
 		end
 	end
 
-	# GET /users/new
-	# GET /users/new.json
+	# GET /users/new/1
+	# GET /users/new.json/1
 	def new
 		@user = User.new
-		#@user.user_id=params[:new_user_id]
+		@user.user_id=params[:id]
 		respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user }
 		end
 	end
 
-	# GET /users/newuser/1
-	# GET /users/newuser/1.json
-	def newnum
-		@user =User.new
-		@user.user_id=params[:id]
-		respond_to do |format|
-      	format.html # new.html.erb
-      	format.json {render json:@user}
-		end
-	end
-	
 	# GET /users/1/edit
 	def edit
 		@user = User.find(params[:id])

@@ -166,3 +166,11 @@ http://doc.ruby-lang.org/ja/1.9.2/library/test=2funit.html
 
 
 user:user_idは属性をuniqueにすればいいんじゃないか
+
+
+
+テスト一応通るようにした
+フィクスチャあたりがちゃんと動かないときがあるっぽいので原因を調べる
+
+インデントの修正に入る
+

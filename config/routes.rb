@@ -2,7 +2,9 @@ require 'date'
 Board::Application.routes.draw do
   
 
-  match 'users/newuser/:id', :to=>'users#newnum' ,:as=>'newuser' ,:via=>:get
+  #match 'users/newuser/:id', :to=>'users#newnum' ,:as=>'newuser' ,:via=>:get
+  match 'users/new/:id', :to=>'users#new' ,:as=>'new' ,:via=>:get
+  
 
   resources :users
 
