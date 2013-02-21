@@ -1,4 +1,4 @@
-rquire 'spec_helper'
+require 'spec_helper'
 
 describe TestBoard do
   fixtures :test_boards
