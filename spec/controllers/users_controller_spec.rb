@@ -39,6 +39,7 @@ describe UsersController do
 
   describe "GET index" do
     it "assigns all users as @users" do
+      User.delete_all
       user = User.create! valid_attributes
       get :index, {}, valid_session
       assigns(:users).should eq([user])
