@@ -29,4 +29,8 @@ describe User do
   it "nill save" do
     expect { users(:test4).save! }.to raise_error ActiveRecord::RecordInvalid
   end
+
+  after :all do
+    User.delete_all
+  end
 end
