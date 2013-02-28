@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
-	
+
   # POST /users
   # POST /users.json
   def create
@@ -73,7 +73,6 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    
     respond_to do |format|
       format.html { redirect_to users_url }
       format.json { head :no_content }

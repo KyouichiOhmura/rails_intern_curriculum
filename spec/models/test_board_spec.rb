@@ -24,6 +24,11 @@ describe TestBoard do
   it "nill test" do
     @boards.count(nil).should ==0
   end
+
+  after :all do
+    TestBoard.destroy_all
+  end
+
 end
 
 
