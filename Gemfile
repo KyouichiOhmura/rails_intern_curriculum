@@ -1,12 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.9'
-
+gem 'rails'
+gem 'sqlite3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -37,7 +34,21 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-gem 'rspec-rails'
-
+group :test, :development do
+  gem 'awesome_print'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'mongoid-rspec'
+  gem 'database_cleaner'
+  gem 'simplecov', :require => false
+  gem 'simplecov-rcov', :require => false
+  gem 'capybara'
+  gem 'timecop'
+  gem 'foreman'
+  # エラー画面をわかりやすく整形してくれる
+  # http://morizyun.github.com/blog/better-error-gem-rails-ruby-rack/
+  gem 'better_errors'
+  gem 'pry'
+end
 
 
