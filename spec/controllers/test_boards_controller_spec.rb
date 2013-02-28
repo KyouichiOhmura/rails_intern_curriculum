@@ -19,7 +19,6 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe TestBoardsController do
-
   # This should return the minimal set of attributes required to create a valid
   # TestBoard. As you add validations to TestBoard, be sure to
   # update the return value of this method accordingly.
@@ -79,15 +78,18 @@ describe TestBoardsController do
         assigns(:test_board).should be_persisted
       end
 
-      it "redirects to the created test_board" do
-        post :create, {:test_board => valid_attributes}, valid_session
-        user= User.find_by_user_id(1)
-        #ifはテストに書くべきではない
-        #すべてのケースを列挙するように書く
-        if(user.nil? )
+      describe "user don't exist" do
+        it "redirects to the new user 1" do
+          post :create, {:test_board => valid_attributes}, valid_session
           response.should redirect_to  ("/users/new/1")
-        else
-          response.should redirect_to  user
+        end
+      end
+
+      describe "user exist" do
+        it "redirects to the user" do
+          post :create, {:test_board => valid_attributes}, valid_session
+          user =User.find_by_user_id(1)
+          response.should redirect_to user
         end
       end
     end
@@ -167,5 +169,11 @@ describe TestBoardsController do
       response.should redirect_to(test_boards_url)
     end
   end
+  
 
+
+  after :all do
+    User.delete_all
+    TestBoard.delete_all
+  end
 end
