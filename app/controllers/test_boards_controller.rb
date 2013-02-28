@@ -8,7 +8,7 @@ class TestBoardsController < ApplicationController
       format.json { render json: @test_boards }
     end
   end
-	
+
   # GET /test_boards/1
   # GET /test_boards/1.json
   def show
@@ -19,7 +19,7 @@ class TestBoardsController < ApplicationController
       format.json { render json: @test_board }
     end
   end
-	
+
   # GET /test_boards/new
   # GET /test_boards/new.json
   def new
@@ -35,7 +35,7 @@ class TestBoardsController < ApplicationController
   def edit
     @test_board = TestBoard.find(params[:id])
   end
-	
+
   # POST /test_boards
   # POST /test_boards.json
   def create
@@ -56,12 +56,12 @@ class TestBoardsController < ApplicationController
       end
     end
   end
-	
+
   # PUT /test_boards/1
   # PUT /test_boards/1.json
   def update
     @test_board = TestBoard.find(params[:id])
-    
+
     respond_to do |format|
       if @test_board.update_attributes(params[:test_board])
         format.html { redirect_to "/test_boards"  , notice: 'Test board was successfully updated.' }

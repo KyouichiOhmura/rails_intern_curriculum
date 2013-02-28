@@ -13,12 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20130107184000) do
 
-  create_table "as", :force => true do |t|
-    t.integer  "test"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "test_boards", :force => true do |t|
     t.text     "comment"
     t.time     "d_time"
@@ -28,22 +22,9 @@ ActiveRecord::Schema.define(:version => 20130107184000) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "test_data", :force => true do |t|
-    t.integer  "a"
-    t.text     "t"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "users", :force => true do |t|
     t.integer  "user_id"
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "view_tests", :force => true do |t|
-    t.text     "text"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
