@@ -87,9 +87,8 @@ describe TestBoardsController do
 
       describe "user exist" do
         it "redirects to the user" do
-          FactoryGirl.create :user
+          user = FactoryGirl.create :user
           post :create, {:test_board => valid_attributes}, valid_session
-          user =User.find_by_user_id(1)
           response.should redirect_to user
         end
       end

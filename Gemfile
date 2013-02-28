@@ -38,7 +38,6 @@ group :test, :development do
   gem 'awesome_print'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'mongoid-rspec'
   gem 'database_cleaner'
   gem 'simplecov', :require => false
   gem 'simplecov-rcov', :require => false
