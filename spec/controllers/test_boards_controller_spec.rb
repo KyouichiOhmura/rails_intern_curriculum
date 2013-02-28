@@ -82,6 +82,8 @@ describe TestBoardsController do
       it "redirects to the created test_board" do
         post :create, {:test_board => valid_attributes}, valid_session
         user= User.find_by_user_id(1)
+        #ifはテストに書くべきではない
+        #すべてのケースを列挙するように書く
         if(user.nil? )
           response.should redirect_to  ("/users/new/1")
         else
